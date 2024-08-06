@@ -13,7 +13,15 @@
             <button type="submit">Get Weather</button>
         </form>
         {% if weather_info %}
-            <p>{{ weather_info }}</p>
+        <div class="flag">
+            <img src="https://flagsapi.com/{{weather_info.country}}/flat/64.png">
+        </div>
+            <h2>{{ weather_info.city }} weather</h2>
+            <h1>{{ weather_info.temp }}°C</h1>
+            <h2>{{ weather_info.description }}</h2>
+            <p>Current Time: {{ weather_info.current_time }}</p>
+            <p>Sunrise: {{ weather_info.sunrise }}</p>
+            <p>Sunset: {{ weather_info.sunset }}</p>
         {% endif %}
     </div>
 </body>
